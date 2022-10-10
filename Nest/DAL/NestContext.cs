@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Nest.Models;
 
 namespace Nest.DAL
 {
-    public class NestContext:DbContext
+    public class NestContext:IdentityDbContext
     {
         public NestContext(DbContextOptions<NestContext> options):base(options)
         {
@@ -13,6 +14,12 @@ namespace Nest.DAL
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Vendor> Vendors { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<Setting> Settings { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<ProductTag> ProductTags { get; set; }
+        public DbSet<ProductComment> ProductComments { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
 
     }
 }
